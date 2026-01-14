@@ -1,13 +1,16 @@
 package org.example;
 
-import java.util.Objects;
-
-public class Item {
+public class Item implements Comparable<Item>{
     protected final String name;
     protected final double weight;
 
     public Item(String name, double weight) {
         this.name = name;
+        this.weight = weight;
+    }
+
+    public Item(double weight) {
+        this.name = null;
         this.weight = weight;
     }
 
@@ -29,5 +32,12 @@ public class Item {
     @Override
     public int hashCode() {
         return Double.hashCode(weight);
+    }
+
+    @Override
+    public int compareTo(Item o) {
+        if(this.getWeight() == o.getWeight()) return 0;
+        else if(this.getWeight() > o.getWeight()) return 1;
+        else return -1;
     }
 }
