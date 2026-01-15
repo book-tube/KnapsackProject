@@ -1,5 +1,5 @@
-import org.example.Backpack;
 import org.example.Item;
+import org.example.SimpleBackpack;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,7 +8,7 @@ class BackpackTest {
 
     @Test
     void maxWeightCannotBeExceeded() {
-        Backpack backpack = new Backpack(10);
+        SimpleBackpack backpack = new SimpleBackpack(10);
 
         Item item1 = new Item("A", 6);
         Item item2 = new Item("B", 5);
