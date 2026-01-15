@@ -20,7 +20,6 @@ class SmartBackpackTest {
 
         boolean allPacked = backpack.packAll(items);
 
-        // Optimales Gewicht ist 10 (6 + 4).
         assertFalse(allPacked, "Nicht alle Items passen rein, deshalb false");
         assertEquals(10.0, backpack.getCurrentWeight(), "Rucksack muss optimal mit 10g gepackt sein");
     }
