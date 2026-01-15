@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SmartBackpack extends Backpack {
+public class OptimalBackpack extends AbstractBackpack {
 
-    public SmartBackpack(double maxWeight) {
+    public OptimalBackpack(double maxWeight) {
         super(maxWeight);
     }
 
+    @Override
     public boolean packAll(List<Item> itemsToPack) {
 
         double freeSpace = maxWeight - getCurrentWeight();
@@ -27,7 +28,6 @@ public class SmartBackpack extends Backpack {
         }
 
         List<Item> copyItemsToPack = new ArrayList<>(itemsToPack);
-
         copyItemsToPack.sort(Collections.reverseOrder());
 
         List<Item> best = new ArrayList<>();

@@ -40,4 +40,9 @@ public class Item implements Comparable<Item>{
         else if(this.getWeight() > o.getWeight()) return 1;
         else return -1;
     }
+
+    @Override
+    public String toString() {
+        return name + "(" + weight + "g)";
+    }
 }
